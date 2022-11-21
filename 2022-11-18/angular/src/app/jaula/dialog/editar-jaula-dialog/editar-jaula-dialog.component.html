@@ -1,0 +1,63 @@
+<div class="content">
+    <h1 mat-dialog-title>Editar Jaula</h1>
+    <div mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>ID. </mat-label>
+            <input matInput disabled [(ngModel)]="data.id" [value]="data.id">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>N° Jaula. </mat-label>
+            <input matInput [(ngModel)]="data.numeroJaula" [value]="data.numeroJaula">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Zoologico</mat-label>
+            <input matInput [(ngModel)]="data.nomeZoologico" [value]="data.nomeZoologico">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Bloco</mat-label>
+            <input matInput [(ngModel)]="data.bloco" [value]="data.bloco">
+        </mat-form-field>
+
+        <h3>Cuidadores da Jaula</h3>
+
+        <div class="container">
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource">
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> Id. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="matricula">
+                        <th mat-header-cell *matHeaderCellDef> Matricula </th>
+                        <td mat-cell *matCellDef="let element"> {{element.matricula}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="nome">
+                        <th mat-header-cell *matHeaderCellDef> Nome </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="deletar">
+                        <th mat-header-cell *matHeaderCellDef> deletar </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button mat-mini-fab color="warn" (click)="excuirCuidador(data.id, element)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[2, 5, 10, 20 ]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+
+
+        <div mat-dialog-actions>
+            <button mat-button (click)="onNoClick()">Cancelar</button>
+            <button mat-button (click)="editar(data)" cdkFocusInitial>Salvar</button>
+        </div>
+    </div>

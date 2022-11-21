@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+
+mat-form-field {
+  padding-left: 10px !important;
+  width: 45%;
+}
+h1,
+h3 {
+  color: rgb(63, 63, 67);
+  font-weight: 600;
+}

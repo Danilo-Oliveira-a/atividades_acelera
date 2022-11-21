@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Editar Professor</title>
+	<style>
+.button {
+	background-color: #29a5e2; /* Azul */
+	border: none;
+	color: white;
+	padding: 12px 88.33px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	border-radius: 4px;
+}
+
+.button2:hover {
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0
+		rgba(0, 0, 0, 0.19);
+	background-color: #29a5e2;
+}
+</style>
+</h:head>
+
+<h:body>
+
+	<h:form>
+		<div class="card">
+
+			<div class="field grid">
+				<p:outputLabel styleClass="col-fixed" style="width:200px"
+					value="Nome" />
+				<div class="col">
+					<p:inputText id="campoNome" value="#{professorMB.professor.nome}" />
+				</div>
+			</div>
+			<div class="field grid">
+				<p:outputLabel styleClass="col-fixed" style="width:200px"
+					value="CPF" />
+				<div class="col">
+					<p:inputText id="campoCPF" value="#{professorMB.professor.cpf}" />
+				</div>
+			</div>
+			<div class="field grid">
+				<p:outputLabel styleClass="col-fixed" style="width:200px"
+					value="CIdade" />
+				<div class="col">
+					<p:inputText id="campoCidade"
+						value="#{professorMB.professor.endereco.cidade}" />
+				</div>
+			</div>
+			<div class="field grid">
+				<p:outputLabel styleClass="col-fixed" style="width:200px"
+					value="Rua" />
+				<div class="col">
+					<p:inputText id="campoRua"
+						value="#{professorMB.professor.endereco.rua}" />
+				</div>
+
+			</div>
+			<div class="field grid">
+				<p:outputLabel styleClass="col-fixed" style="width:200px"
+					value="Casa" />
+				<div class="col">
+					<p:inputText id="campoCasa"
+						value="#{professorMB.professor.endereco.casa}" />
+				</div>
+			</div>
+			<div class="field grid">
+				<p:outputLabel styleClass="col-fixed" style="width:200px"
+					value="Disciplina" />
+				<div class="col">
+					<p:inputText id="disciplina"
+						value="#{professorMB.professor.disciplina}" />
+				</div>
+			</div>
+			<div class="field grid">
+				<p:outputLabel styleClass="col-fixed" value="Salario" />
+				<div class="col">
+					<p:inputText id="salario" value="#{professorMB.professor.salario}" />
+				</div>
+			</div>
+			<br />
+
+			<h:commandButton class="button button2" value="Enviar"
+				action="#{professorMB.salvar}" />
+		</div>
+	</h:form>
+	
+</h:body>
+</html>

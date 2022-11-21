@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+fab.mat-warn,
+.mat-mini-fab.mat-warn {
+  background-color: #ca0202;
+}

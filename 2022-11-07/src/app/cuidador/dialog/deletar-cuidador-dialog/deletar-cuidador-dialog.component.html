@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>ALERTA!</h1>
+<div mat-dialog-content>
+    <p>A jaula precisa ter no mínimo um cuidador, Caso a esse cuidador seja o único responvael da Jaula a mesmá
+        excluída!</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button cdkFocusInitial (click)="excluir()">Continuar</button>
+</div>

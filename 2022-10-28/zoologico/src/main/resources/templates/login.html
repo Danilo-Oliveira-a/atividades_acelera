@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Página Inicial</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+<div style="margin-bottom: 30px;">
+	<nav>
+		<div class="nav-wrapper" >
+			<div >
+				<a  href="/"  class="brand-logo"  style="margin: 10px;">
+					<img  style="height: 50px;width: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9zA2-DVJhJG-wBTDUG0yUwXY_7WkhqvMFIQ&usqp=CAU" alt="" class="circle">
+					<span style="position: relative;bottom: 15px;">Zoologico</span>
+				</a>
+			</div>
+
+		</div>
+	</nav>
+</div>
+
+<div class="container">
+	<div class="card small con" style="height: 300px;width: 600px; margin: auto;">
+
+
+		<form class="col 4" th:action="@{/process-login}" method="POST">
+
+			<div class="container">
+				<div class="row" >
+
+					<div class="input-field col s12">
+						<i class="material-icons prefix">supervisor_account</i>
+						<input id="icon_prefix" value="" name="userName" required type="text" class="validate" >
+						<label for="icon_prefix">Usuário</label>
+					</div>
+					<div class="input-field col s12" >
+						<i class="material-icons prefix">lock</i>
+						<input id="icon_senha" value="" required name="password" type="password" class="validate" >
+						<label for="icon_senha">Senha</label>
+					</div>
+					<div class="alert" style="color: #f50057;text-align: center;font-size: 12px;" th:if="${errorMessage}" th:text="${errorMessage}"></div>
+					<div class="input-field col s12" style="margin-right: 100%">
+						<button style="width: 100%;" class="btn waves-effect waves-light" type="submit" name="action">Entrar
+<!--							<i class="material-icons right">save</i>-->
+						</button>
+					</div>
+
+				</div>
+			</div>
+		</form>
+
+	</div>
+</div>
+<footer class="page-footer" style="position: relative; bottom: 0px;top: 130px;width: 100%;">
+	<div class="container">
+		<div class="row">
+			<div class="col l8 s1">
+				<h5 class="white-text">Footer Content</h5>
+				<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			© 2022 Copyright
+			<a class="grey-text text-lighten-4 right" href="#!">Danilo Oliveira</a>
+		</div>
+	</div>
+	<div class="fixed-action-btn"><a class="btn-floating btn-large red" href="#msg"><i class="large material-icons">chat</i></a></div>
+</footer>
+</body>
+</html>

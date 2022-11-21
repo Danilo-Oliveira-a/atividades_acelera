@@ -1,0 +1,20 @@
+<div class="content">
+    <h3 mat-dialog-title>Adicionar Cuidador</h3>
+    <div mat-dialog-content>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Matrícula</mat-label>
+        <input matInput disabled [(ngModel)]="matricula" [value]="matricula">
+    </mat-form-field>
+    <mat-form-field appearance="fill"  style="padding-left: 10px;">
+        <mat-label>Nome</mat-label>
+        <input matInput  [(ngModel)]="cuidador.nome"> 
+    </mat-form-field>
+    
+    </div>
+
+    <div mat-dialog-actions> 
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button  (click)="adicionrCuidador()" cdkFocusInitial>Salvar</button>
+    </div>
+</div>

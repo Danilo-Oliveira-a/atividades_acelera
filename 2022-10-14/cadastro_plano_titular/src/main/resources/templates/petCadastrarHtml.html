@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Adicionar Dependente</title>
+			<!--Import Google Icon Font-->
+      		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      		<!--Import materialize.css-->
+      	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      		<!--Let browser know website is optimized for mobile-->
+      		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		
+	</head>
+	<body>
+
+		<div style="margin-bottom: 30px;">
+
+			<nav>
+				<div class="nav-wrapper" >
+					<div >
+						<a  href="/" class="brand-logo"  style="margin: 10px;">
+							<img  style="height: 50px;width: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9zA2-DVJhJG-wBTDUG0yUwXY_7WkhqvMFIQ&usqp=CAU" alt="" class="circle">
+							<span style="position: relative;bottom: 15px;">Bem Estar Pet</span>
+						</a>
+					</div>
+
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="">Login</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="container">
+			<header>
+
+					<a href="/pessoa/listar" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Listar Tabela</a>
+
+			</header>
+
+
+
+
+			<div th:each="pessoa : ${pessoa}" >
+
+				<p><b>Nome </b> <span th:text="${pessoa.nome}"></span></p>
+				<p><b>CPF</b> <span th:text="${pessoa.cpf}"></span></p>
+				<p><b>Data Nascimento </b><span th:text="${pessoa.dataNascimento}"></span></p>
+
+
+				<form class="col 4"  method="post">
+					<div class="card row">
+						<div class="input-field col s8" style="margin-right: 100%">
+							<i class="material-icons prefix">pets</i>
+							<input id="icon_prefix" value="" name="nome" type="text" class="validate" placeholder="Nome">
+							<!--							<label for="icon_prefix">Nome</label>-->
+						</div>
+
+						<div class="input-field col s8" style="margin-right: 100%">
+							<i class="material-icons prefix">pets</i>
+							<input id="icon_especie" value="" name="especie"   placeholder="especie"type="text" class="validate">
+							<!--							<label for="icon_profissao">Profissão</label>-->
+						</div>
+						<div class="input-field col s8" style="margin-right: 100%">
+							<i class="material-icons prefix">pets</i>
+							<input id="icon_raca" value="" name="raca"   placeholder="raca"type="text" class="validate">
+							<!--							<label for="icon_profissao">Profissão</label>-->
+						</div>
+
+						<div class="input-field col s8" style="margin-right: 100%">
+							<i class="material-icons prefix">av_timer</i>
+							<input id="icon_idade" value="" name="idade"   placeholder="idade do pet"type="text" class="validate">
+							<!--							<label for="icon_profissao">Profissão</label>-->
+						</div>
+						<div class="input-field col s6" style="margin-right: 100%">
+							<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div>
+				<h5><span class="title">Pets</span></h5><br/>
+				<ul class="collection">
+					<li class="collection-item avatar" th:each="pet : ${pets}">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQh5FR2cMW1E88SR_b47iJQNC8t_aIkujGXA&usqp=CAU" alt="" class="circle">
+<!--						<span class="title">Dependentes</span>-->
+						<p>
+							<b>Nome </b><span th:text="${pet.nome}" ></span>
+							<br><b>Idade </b><span th:text="${pet.idade}" ></span>
+							<br><b>Especie </b><span th:text="${pet.especie}" ></span>
+							<br><b>Raça </b><span th:text="${pet.raca}" ></span>
+						</p>
+
+						<a href="#" class="secondary-content"><i class="material-icons">grade</i></a>
+					</li>
+				</ul>
+				<br/>
+			</div>
+		</div>
+
+	</body>
+</html>

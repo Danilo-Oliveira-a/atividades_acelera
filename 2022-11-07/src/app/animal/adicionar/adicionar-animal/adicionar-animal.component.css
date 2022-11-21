@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+fab.mat-warn,
+.mat-mini-fab.mat-warn {
+  background-color: #ca180b;
+}
+
+.mat-raised-button {
+  margin-right: 10px;
+  margin-left: 15px;
+  width: 100px;
+}
+
+.mat-form-field {
+  padding-left: 15px !important;
+  width: 40%;
+}
+.mat-raised-butto {
+  padding-left: 15px !important;
+}
+h1 {
+  padding-left: 15px !important;
+  font-weight: 600;
+}

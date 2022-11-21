@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta charset="UTF-8">
+		<title>Lista de Pessoas</title>
+
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		<!--Import materialize.css-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+		<!--Let browser know website is optimized for mobile-->
+      		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+
+	<div style="margin-bottom: 30px;">
+		<nav>
+			<div class="nav-wrapper" >
+				<div >
+					<a  href="/" class="brand-logo"  style="margin: 10px;">
+						<img  style="height: 50px;width: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9zA2-DVJhJG-wBTDUG0yUwXY_7WkhqvMFIQ&usqp=CAU" alt="" class="circle">
+						<span style="position: relative;bottom: 15px;">Bem Estar Pet</span>
+					</a>
+				</div>
+
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="">Cadastrar</a></li>
+					<li><a href="">sass <span class="new badge">4</span></a></li>
+					<li><a href="">Login</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="container">
+		<header>
+
+			<a href="/pessoa/cadastrar"class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Titular</a>
+		</header>
+
+		<div >
+			<table class="striped">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>CPF</th>
+						<th>Data Nascimento</th>
+						<th>Cidade</th>
+						<th>Rua</th>
+						<th>Número</th>
+						<th>Deletar</th>
+						<th>Editar</th>
+						<th>Pet</th>
+					</tr>
+
+
+				</thead>
+				<tbody>
+					<tr th:each="pessoa : ${pessoas}">
+
+						<td><span th:text="${pessoa.nome}"></span></td>
+						<td><span th:text="${pessoa.cpf}"></span></td>
+						<td><span th:text="${pessoa.dataNascimento}"></span></td>
+						<td><span th:text="${pessoa.endereco.cidade}"></span></td>
+						<td><span th:text="${pessoa.endereco.rua}"></span></td>
+						<td><span th:text="${pessoa.endereco.numero}"></span></td>
+						<td><a  th:href="${(#mvc.url('PC#deletaPessoaMetodo').arg(0, pessoa.id)).build()}"><i class="material-icons left">delete_forever</i></a></td>
+						<td><a  th:href="${(#mvc.url('PC#editaPessoaMetodo').arg(0, pessoa.id)).build()}"><i class="material-icons left">edit</i></a></td>
+						<td><a  th:href="${(#mvc.url('PC#adicionaPetMetodo').arg(0, pessoa.id)).build()}"><i class="material-icons left">add_circle_outline</i></a></td>
+					</tr>
+
+				</tbody>
+
+			</table>
+			<div>
+		</div>
+		<!--JavaScript at end of body for optimized loading-->
+      	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	</body>
+</html>

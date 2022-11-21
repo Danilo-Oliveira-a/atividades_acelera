@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Insert title here</title>
+	<style>
+		.button {
+			background-color: #29a5e2; /* Azul */
+			border: none;
+			color: white;
+			padding: 12px 88.33px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			-webkit-transition-duration: 0.4s; /* Safari */
+			transition-duration: 0.4s;
+			border-radius: 4px;
+		}
+		
+		.button2:hover {
+			box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0
+				rgba(0, 0, 0, 0.19);
+			background-color: #29a5e2;
+		}
+	</style>
+</h:head>
+<h:body>
+	<h:form>
+		<br />
+		<h:commandButton calss="button button2" value="Cadastrar Professor"
+			action="#{inicio.cadastrarProfessor}" />
+		<br />
+		<h:commandButton calss="button button2" value="Cadastrar Aluno"
+			action="#{inicio.cadastrarAluno}" />
+	</h:form>
+</h:body>
+</html>
